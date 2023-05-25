@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> ECO dashboard</title>
+  <!--#change the title of the page-->
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.2/d3.min.js"
+    integrity="sha512-oKI0pS1ut+mxQZdqnD3w9fqArLyILRsT3Dx0B+8RVEXzEk3aNK3J3pWlaGJ8MtTs1oiwyXDAH6hG6jy1sY0YqA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <style>
+    td,
+    th {
+      text-align: center;
+      padding: 1%;
+      border: 1px solid;
+
+    }
+
+    table {
+      margin-top: 30px;
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid;
+    }
+  </style>
+
+</head>
+
+
+<body style="background-color :#eef0e6">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="">
+        <!--#change-->
+        <h2 class="aa">Eco Association
+        </h2>
+        <!--#change-->
+      </a>
+      <!--#change brand link and title-->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link aa" href="../../index.html">Home</a>
+            <!--#change-->
+          </li>
+
+          <li class="nav-item active">
+            <a class="nav-link aa" href="../referrence/about.html">Resource</a>
+            <!--#change-->
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+
+
+
+  </nav>
+
+
+  <!-- Page Content -->
+  <section class="py-5 mt-5 mb-4">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-2">
+        </div>
+        <img class="col-md-8" style="width:60%; border-radius: 50px;" src="https://i.postimg.cc/GmQrVPNP/image.png"
+          title="hack flow">
+
+        <div class="col-md-2">
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">ECO Transfer</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">ECOX Transfer</button>
+      </div>
+
+      <div id="London" class="tabcontent">
+
+        <div class="row mt-5 mb-5">
+
+          <!-- first-box -->
+          <div class="col-md-3 mb-4 aa">
+
+            <div class="text-xs font-weight-bold text-primary mb-1">
+              Total Transfers ECO</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800" id="first-box"
+              style="padding-left: 35px;font-size: 30px;"></div>
+
+          </div>
+
+          <!-- second-box -->
+          <div class="col-md-3 mb-4 aa ">
+
+            <div class="text-xs font-weight-bold text-primary  mb-1">
+              Total Users</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800" id="second-box"
+              style="padding-left: 10px;font-size: 30px;"></div>
+          </div>
+
+          <!-- third-box -->
+          <div class="col-md-3 mb-4 aa">
+
+            <div class="text-xs font-weight-bold text-primary  mb-1">
+              Transfers Volume (USD)</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800" id="third-box"
+              style="padding-left: 30px;font-size: 30px;"></div>
+          </div>
+          <!--fourth-box -->
+          <div class="col-md-3 mb-4 aa">
+
+            <div class="text-xs font-weight-bold text-primary  mb-1">
+              Transfers Volume (ECO)</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800" id="fourth-box"
+              style="padding-left: 25px;font-size: 30px;"></div>
+
+          </div>
+        </div>
+
+        <div class="row mt-3  ">
+
+
+         
+
+
+
+
+          <strong class="  bb" style="font-size: larger;font-weight: bold;"> Transfer Activity
+          </strong>
+
+          <div class="col-md-6 mb-5" id="chart99" style="width: 100%; max-height: 150px;"><i>
+              <p class="mb-2 mt-5 bb"> * Distribution of Transfer ECO - Number of Transfers</p>
+            </i></div>
+
+          <div class="col-md-6 mb-5" id="chart88" style="width: 100%; max-height: 150px;"><i>
+              <p class="mb-2 mt-5 bb"> * Distribution of Transfer ECO - Number of Unique Users</p>
+            </i></div>
+
+
+        </div>
+
+
+
+        <div class="row mt-2 mb-5">
+          <div class="col-md-6" id="chart24" style="width: 80%;height:300px;"><i>
+              <p class="mb-2 mt-5 bb"> * Number of Transfers ECO </p>
+            </i></div>
+          <div class="col-md-6" id="chart25" style="width: 80%;height:300px;"><i>
+              <p class="mb-2 mt-5 bb"> * Transfers Volume (Million USD) </p>
+            </i></div>
+          <div class="col-md-6 mt-5" id="chart26" style="width: 80%;height:300px;"><i>
+              <p class="mb-2 mt-5 bb"> * Number of Transfers ECO </p>
+            </i></div>
+            <div class="col-md-6 mt-5" id="chart27" style="width: 80%;height:300px;"><i>
+              <p class="mb-2 mt-5 bb"> * Unique Users </p>
+            </i></div>
+        </div>
+
+        <div class="row">
+        <div class="col-md-6 mb-5" id="chart999" style="width: 100%; max-height: 150px;"><i>
+            <p class="mb-2 mt-5 bb"> * ECO - Top Wallet by Transfers Volume (Million USD)</p>
+          </i></div>
+
+        <div class="col-md-6 mb-5" id="chart888" style="width: 100%; max-height: 150px;"><i>
+            <p class="mb-2 mt-5 bb"> * ECO - Top Wallet Share of Transfers Volume</p>
+          </i></div>
+        </div>
+      </div>
+
+      <div id="Paris" class="tabcontent">
+        <div class="col-md-12">
+
+          <iframe class=" mb-5"
+              src="https://flipsidecrypto.xyz/Yousefi_1994/eco-daily-transfer-volume-yPn030"
+              width="110%" height="1200px" style="border-radius: 25px;">
+          </iframe>
+      </div>
+      </div>
+
+
+
+      <script>
+        function openCity(evt, cityName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(cityName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+      </script>
+      <script>
+        window.onload = function () {
+          document.getElementById("London").style.display = "block";
+          document.getElementsByClassName("tablinks")[0].className += " active";
+
+        };
+      </script>
+    </div>
+  </section>
+
+
+
+
+
+  <div class="footer-basic">
+    <footer>
+      <div class="social">
+        <a target="_blank" href="https://github.com/lordking1234"><i class="icon ion-social-github"></i></a>
+        <!--#change link -->
+        <a target="_blank" href="https://twitter.com/MRSoltanii"><i class="icon ion-social-twitter"></i></a>
+        <!--#change link-->
+        <a target="_blank" href="https://www.linkedin.com/in/mohammad-reza-soltani-62009523b/"><i
+            class="icon ion-social-linkedin"></i></a>
+        <!--#change link-->
+      </div>
+      <ul class="list-inline">
+        <li class="list-inline-item"><a target="_blank" href="https://flipsidecrypto.xyz/">Flipside </a></li>
+        <!--#change link & text-->
+        <li class="list-inline-item"><a target="_blank" href="https://metricsdao.xyz/">Metrics dao</a></li>
+        <!--#change link & text-->
+        <li class="list-inline-item">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Buy me a coffee 🍵
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <p class="dropdown-item" style="font-weight:bold ; ">Thanks you 💗</p>
+              </li>
+              <li>
+                <p class="dropdown-item">
+                  <button onclick="myFunction()" style="border: none; font-weight:400 ; ">
+                    Click to copy metamask address <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                      <path
+                        d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z">
+                      </path>
+                      <path
+                        d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z">
+                      </path>
+                    </svg>
+                  </button>
+            </ul>
+          </div>
+        </li>
+        <!--#change link & text-->
+      </ul>
+      <p class="copyright">Built by Lordking 👑</p>
+      <!--#change-->
+    </footer>
+  </div>
+  </footer>
+  <!--copy to clipbord-->
+  <input type="text" value="0x7af2d9a872cbb1bc19fcbd75a4241776ab63dcca" id="myInput" style="visibility :hidden">
+  <script>
+    function myFunction() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+    }
+  </script>
+
+
+
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="about.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.1/echarts.min.js"></script>
+  <script src="about.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+</body>
+
+</html>
