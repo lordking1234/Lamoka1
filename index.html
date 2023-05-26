@@ -233,68 +233,6 @@
 
         </div>
 
-        <div class=""
-            style="border-radius: 25px; width:100%; height:100px; background: linear-gradient(to bottom,  #021a1a 0%, #172a27 100%);font-weight:bold; text-align: center; line-height:100px; font-size:larger; color:white;">
-            Business Report (Uncompleted)</div>
-
-
-        <div class="mb-5"
-            style="border-radius: 25px; width:100%;  background: linear-gradient(to bottom,  #c5ecec 0%, #efd8fa 100%);padding: 20px; ">
-
-
-            <p class="mt-1 mt-3" style="font-family:serif">On 13 March 2023 at 08:56:35 AM +UTC, DeFi lending protocol
-                Euler
-                Finance experienced a Flash Loan Attack.</p>
-            <p class="mt-1 " style="font-family:serif">Based on on-chain data analysis, the attacker has successfully
-                executed multiple transactions resulting in the theft of approximately $196 million, making it the
-                largest
-                hack of 2023 thus far. Stolen assets include several million worth of DAI, USDC, Staked Ether (StETH),
-                and
-                Wrapped Bitcoin (WBTC).</p>
-            <p class="mt-1 " style="font-family:serif">The attack was possible due to a lack of liquidity checks in the
-                donateToReserves function of the Etoken. The attacker executed multiple calls with different currencies
-                to
-                generate profit, resulting in a massive loss of $196 million across six different tokens. Currently, the
-                funds remain in the attacker’s account.</p>
-            <p class="mt-1 " style="font-family:serif">1. The attacker first borrowed 30 million DAI through a flash
-                loan
-                from Aave and then deployed two contracts: one for lending and one for liquidation.</p>
-            <p class="mt-1 " style="font-family:serif">2. The attacker then called the deposit function and pledged 20
-                million DAI to the Euler Protocol contract, receiving 19.5 million eDAI in return.</p>
-            <p class="mt-1 " style="font-family:serif">3. The Euler Protocol allows users to borrow up to 10 times their
-                deposit by calling the mint function. The attacker leveraged this capability to borrow 195.6 million
-                eDAI
-                and 200 million dDAI.</p>
-            <p class="mt-1 " style="font-family:serif">4. The attacker called the repay function using the remaining 10
-                million DAI borrowed through the flash loan to repay their debt and destroy 10 million dDAI. They then
-                proceeded to call the mint function again to borrow 195.6 million eDAI and 200 million dDAI.
-
-            </p>
-            <p class="mt-1 " style="font-family:serif">5. The attacker then called the donateToReserves function and
-                donated
-                10 times the amount needed to repay their debt, sending 100 million eDAI. They then called the liquidate
-                function to initiate the liquidation process and obtained 310 million dDAI and 250 million eDAI.
-
-            </p>
-            <p class="mt-1 " style="font-family:serif">6. The attacker called the withdraw function and obtained 38.9
-                million DAI, which they used to repay the 30 million DAI borrowed through the flash loan. They profited
-                8.87
-                million DAI from the attack.
-
-            </p>
-
-            <img style="width: 100%;border-radius: 25px;"
-                src="https://pbs.twimg.com/media/FrF2t-DaYAAXLY_?format=png&name=large" title="reason">
-
-            <p class="mt-5 mb-5" style="font-family:serif">The hack is made possible due to the flawed logic its
-                donation and liquidation. Specifically, the donateToReserves needs to ensure the donator is still
-                over-collateralized. And liquidation needs to ensure the *correct* conversion rate from borrow to
-                collateral asset.</p>
-            <img style="width: 100%;border-radius: 25px;"
-                src="https://pbs.twimg.com/media/FrGCkKQaQAE030q?format=jpg&name=4096x4096" title="reason">
-        </div>
-
-
 
 
 
