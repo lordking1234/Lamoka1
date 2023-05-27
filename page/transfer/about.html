@@ -5,44 +5,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title> ECO dashboard</title>
+  <title>Eco Association
+  </title>
   <!--#change the title of the page-->
-
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.2/d3.min.js"
-    integrity="sha512-oKI0pS1ut+mxQZdqnD3w9fqArLyILRsT3Dx0B+8RVEXzEk3aNK3J3pWlaGJ8MtTs1oiwyXDAH6hG6jy1sY0YqA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <style>
-    td,
-    th {
-      text-align: center;
-      padding: 1%;
-      border: 1px solid;
 
-    }
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.1/echarts.min.js"></script>
+    <style>
+      td,
+      th {
+        text-align: center;
+        padding: 1%;
+        border: 1px solid;
 
-    table {
-      margin-top: 30px;
-      width: 100%;
-      border-collapse: collapse;
-      border: 1px solid;
-    }
-  </style>
+      }
 
-</head>
+      table {
+        margin-top: 30px;
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid;
+      }
+    </style>
+
+  </head>
 
 
-<body style="background-color :#eef0e6">
+<body>
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="">
+
+      <a class="navbar-brand" href="../../index.html">
         <!--#change-->
         <h2 class="aa">Eco Association
         </h2>
@@ -78,156 +80,125 @@
 
 
   <!-- Page Content -->
-  <section class="py-5 mt-5 mb-4">
-    <div class="container">
-      <div class="row mb-5">
-        <div class="col-md-2">
-        </div>
-        <img class="col-md-8" style="width:60%; border-radius: 50px;" src="https://i.postimg.cc/GmQrVPNP/image.png"
-          title="hack flow">
 
-        <div class="col-md-2">
-        </div>
+  <section class="py-5 mt-5 ">
+    <div className="d-flex flex-column justify-content-center " style="border-radius: 15px; margin-top: 10px ;
+      margin-bottom: 25px;
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 250px;
+      text-align: center;
+      background: radial-gradient(
+      circle,
+      rgba(29, 55, 57, 1) 30%,
+      rgba(24, 24, 24, 1) 80%
+      );
+      font-family: Arial, sans-serif;
+      padding: 10px;">
+
+      <h1 class="mb-3 text-white slogan">
+        <span>
+          <img src="https://assets-currency.kucoin.com/6368bb4f7c9f4d0001171a05_MicrosoftTeams-image%20%2847%29.png"
+            style="
+            width: 80px;
+            height: 80px;
+            box-shadow: 0 0px 20px rgba(1300, 60, 231, 20);
+            border-radius: 1000px"></img>
+        </span>
+        <span class="text">ECO </span>Transfers
+
+      </h1>
+      <div class="subtitle-below text-white opacity-75">
+        Welcome to the daily transfer volume dashboard for ECO and ECOx tokens. This powerful tool provides you with
+        valuable insights into the transfer activities of these tokens using on-chain data.
       </div>
-
-
-
-
-
-
-      <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">ECO Transfer</button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">ECOX Transfer</button>
-      </div>
-
-      <div id="London" class="tabcontent">
-
-        <div class="row mt-5 mb-5">
-
-          <!-- first-box -->
-          <div class="col-md-3 mb-4 aa">
-
-            <div class="text-xs font-weight-bold text-primary mb-1">
-              Total Transfers ECO</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800" id="first-box"
-              style="padding-left: 35px;font-size: 30px;"></div>
-
-          </div>
-
-          <!-- second-box -->
-          <div class="col-md-3 mb-4 aa ">
-
-            <div class="text-xs font-weight-bold text-primary  mb-1">
-              Total Users</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800" id="second-box"
-              style="padding-left: 10px;font-size: 30px;"></div>
-          </div>
-
-          <!-- third-box -->
-          <div class="col-md-3 mb-4 aa">
-
-            <div class="text-xs font-weight-bold text-primary  mb-1">
-              Transfers Volume (USD)</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800" id="third-box"
-              style="padding-left: 30px;font-size: 30px;"></div>
-          </div>
-          <!--fourth-box -->
-          <div class="col-md-3 mb-4 aa">
-
-            <div class="text-xs font-weight-bold text-primary  mb-1">
-              Transfers Volume (ECO)</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800" id="fourth-box"
-              style="padding-left: 25px;font-size: 30px;"></div>
-
-          </div>
-        </div>
-
-        <div class="row mt-3  ">
-
-
-         
-
-
-
-
-          <strong class="  bb" style="font-size: larger;font-weight: bold;"> Transfer Activity
-          </strong>
-
-          <div class="col-md-6 mb-5" id="chart99" style="width: 100%; max-height: 150px;"><i>
-              <p class="mb-2 mt-5 bb"> * Distribution of Transfer ECO - Number of Transfers</p>
-            </i></div>
-
-          <div class="col-md-6 mb-5" id="chart88" style="width: 100%; max-height: 150px;"><i>
-              <p class="mb-2 mt-5 bb"> * Distribution of Transfer ECO - Number of Unique Users</p>
-            </i></div>
-
-
-        </div>
-
-
-
-        <div class="row mt-2 mb-5">
-          <div class="col-md-6" id="chart24" style="width: 80%;height:300px;"><i>
-              <p class="mb-2 mt-5 bb"> * Number of Transfers ECO </p>
-            </i></div>
-          <div class="col-md-6" id="chart25" style="width: 80%;height:300px;"><i>
-              <p class="mb-2 mt-5 bb"> * Transfers Volume (Million USD) </p>
-            </i></div>
-          <div class="col-md-6 mt-5" id="chart26" style="width: 80%;height:300px;"><i>
-              <p class="mb-2 mt-5 bb"> * Number of Transfers ECO </p>
-            </i></div>
-            <div class="col-md-6 mt-5" id="chart27" style="width: 80%;height:300px;"><i>
-              <p class="mb-2 mt-5 bb"> * Unique Users </p>
-            </i></div>
-        </div>
-
-        <div class="row">
-        <div class="col-md-6 mb-5" id="chart999" style="width: 100%; max-height: 150px;"><i>
-            <p class="mb-2 mt-5 bb"> * ECO - Top Wallet by Transfers Volume (Million USD)</p>
-          </i></div>
-
-        <div class="col-md-6 mb-5" id="chart888" style="width: 100%; max-height: 150px;"><i>
-            <p class="mb-2 mt-5 bb"> * ECO - Top Wallet Share of Transfers Volume</p>
-          </i></div>
-        </div>
-      </div>
-
-      <div id="Paris" class="tabcontent">
-        <div class="col-md-12">
-
-          <iframe class=" mb-5"
-              src="https://flipsidecrypto.xyz/Yousefi_1994/eco-daily-transfer-volume-yPn030"
-              width="110%" height="1200px" style="border-radius: 25px;">
-          </iframe>
-      </div>
-      </div>
-
-
-
-      <script>
-        function openCity(evt, cityName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(cityName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-      </script>
-      <script>
-        window.onload = function () {
-          document.getElementById("London").style.display = "block";
-          document.getElementsByClassName("tablinks")[0].className += " active";
-
-        };
-      </script>
     </div>
+    <div class="container mb-4" style="font-family:serif ">
+      <li class="container" style="padding:10px;font-family:serif">We
+        hope that our Daily Transfer Volume Dashboard
+        will provide you with the necessary tools and insights to analyze and understand the transfer activities
+        of ECO and ECOx tokens. </li>
+    </div>
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'London')">ECO Transfer</button>
+      <button class="tablinks" onclick="openCity(event, 'Paris')">ECOX Transfer</button>
+    </div>
+    <div id="London" class="tabcontent mt-5">
+
+      <div class="col-md-12">
+
+        <iframe class=" mb-5" src="https://flipsidecrypto.xyz/Lordking/eco-transfers-UUnB-w" width="100%"
+          height="2400px" style="border-radius: 25px;">
+        </iframe>
+      </div>
+
+    </div>
+    <div id="Paris" class="tabcontent mt-5">
+      <div class="col-md-12">
+
+        <iframe class=" mb-5" src="https://flipsidecrypto.xyz/Lordking/ec-ox-transfers-12-17-am-5RDDHf" width="100%"
+          height="2400px" style="border-radius: 25px;">
+        </iframe>
+      </div>
+    </div>
+    <div class="container mt-5"
+      style="padding:10px;font-family:serif ;border-radius: 10px; border: 2px outset lightgray;">
+      <li class="container mt-3 mb-4" style="font-family:serif ; font-weight: bold;">Key Features of the Dashboard:</li>
+      <p class="container" style="font-family:serif"><code style="font-family:serif">Total Transfer Volume:</code>
+        Gain a comprehensive overview of the total transfer volume for ECO and ECOx tokens. This metric allows
+        you to gauge the overall activity and liquidity of these tokens in the market.</p>
+      <p class="container" style="font-family:serif"><code style="font-family:serif">Daily Transfer Volume:</code>
+        Track the daily transfer volume for both ECO and ECOx tokens over time. This crucial information enables
+        you to observe trends, identify patterns, and make data-driven decisions based on the transactional flow
+        of these tokens.</p>
+      <p class="container" style="font-family:serif"><code style="font-family:serif">Time Metrics:</code> The
+        dashboard facilitates the visualization of transfer volume metrics over time. By employing interactive
+        charts and graphs, you can explore historical data, spot trends, and gain insights into the token's
+        performance across various time periods.</p>
+      <p class="container" style="font-family:serif"><code style="font-family:serif">Optionality in Timescales:</code>
+        We understand the importance of
+        flexibility when it comes to analyzing data. Our dashboard prioritizes providing a wide range of
+        timescale options, enabling you to zoom in or zoom out to view transfer volume metrics in different
+        timeframes. This functionality allows for a more granular examination of the data or a broader overview,
+        depending on your specific requirements.</p>
+      <p class="container" style="font-family:serif"><code
+          style="font-family:serif">Consideration of Linear Inflation:</code> Our calculations take into
+        account the impact of linear inflation on transfer volume. By utilizing the BaseValueTransfer function
+        along with the linear inflation multiplier (_linearInflation), we ensure that the metrics accurately
+        reflect the dynamic nature of the token ecosystem.</p>
+    </div>
+
+    </div>
+    <script>
+      function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+    <script>
+      window.onload = function () {
+        document.getElementById("London").style.display = "block";
+        document.getElementsByClassName("tablinks")[0].className += " active";
+
+      };
+    </script>
   </section>
+
+
+
+
+
+
+
 
 
 
@@ -307,8 +278,9 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.1/echarts.min.js"></script>
-  <script src="about.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="about.css"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
 
 
 </body>
