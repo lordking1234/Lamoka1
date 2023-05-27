@@ -1,3 +1,25 @@
+
+.text{
+  color: #53fdca;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(#fc3fff, #789efb);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.subtitle-above {
+  font-size: 18px;
+  letter-spacing: 1px;
+  font-family: Courier, monospace;
+}
+
+.subtitle-below {
+  font-size: 16px;
+}
+
+.slogan {
+  font-weight: 600;
+  font-size: 60px;
+}
 .bb {
   display: inline-block;
   margin-bottom: 8px;
@@ -14,6 +36,9 @@
   overflow: hidden;
   border: 1px solid #eef0e6;
   background-color: #f1f1f1;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 50px;
 
 }
 
@@ -28,16 +53,17 @@
   transition: 0.3s;
   font-size: 17px;
   border-radius: 50px;
+  
 }
 
 /* Change background color of buttons on hover */
 .tab button:hover {
-  background-color: #eef097;
+  background-color: #c1d2f6;
 }
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: #646606;
+  background-color: #ebb9f8;
 }
 
 /* Style the tab content */
