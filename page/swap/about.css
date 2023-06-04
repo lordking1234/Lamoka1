@@ -1,25 +1,3 @@
-
-.text{
-  color: #53fdca;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(#fc3fff, #789efb);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
-.subtitle-above {
-  font-size: 18px;
-  letter-spacing: 1px;
-  font-family: Courier, monospace;
-}
-
-.subtitle-below {
-  font-size: 16px;
-}
-
-.slogan {
-  font-weight: 600;
-  font-size: 60px;
-}
 .bb {
   display: inline-block;
   margin-bottom: 8px;
@@ -31,7 +9,16 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #eef0e6;
+  background-color: #f1f1f1;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 50px;
 
+}
 
 /* Style the buttons inside the tab */
 .tab button {
@@ -58,12 +45,7 @@
 }
 
 /* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #eef0e6;
-  border-top: none;
-}
+
 /*header starts */
 .aa {
   display: inline-block;
